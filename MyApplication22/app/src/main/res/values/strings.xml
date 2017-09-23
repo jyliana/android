@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndroidContextMenu</string>
+    <string name="action_settings">Settings</string>
+    <string name="Hello_world">Hello World!</string>
+    <string name="action_item1">item1</string>
+    <string name="action_item2">item2</string>
+    <string name="action_item3">item3</string>
+    <string name="action_mail">mail</string>
+    <string name="invisible_group">Отобразить группу</string>
+    <string name="invisible_item">Отобразить пункт меню</string>
+</resources>

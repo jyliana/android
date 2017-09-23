@@ -1,0 +1,17 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Просто кофе</string>
+    <string name="quantity">Количество</string>
+    <string name="order_summary">Итого</string>
+    <string name="toppings">Добавки</string>
+    <string name="whipped_cream">Взбитые сливки</string>
+    <string name="order">Заказ</string>
+    <string name="chocolate">Шоколад</string>
+    <string name="name">Имя</string>
+    <string name="thank_you">Спасибо!</string>
+    <string name="total">Итого: <xliff:g id="price" example="0">%s</xliff:g></string>
+    <string name="quantity_all">Количество: <xliff:g id="quantity" example="0">%d</xliff:g></string>
+    <string name="add_chocolate">Добавить шоколад? <xliff:g id="hasChocolate" example="true">%b</xliff:g></string>
+    <string name="add_cream">Добавить сливки? <xliff:g id="hasWhippedCream" example="true">%b</xliff:g></string>
+    <string name="name_order">Имя: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="just_order">Просто заказ кофе</string>
+</resources>
