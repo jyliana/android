@@ -1,53 +1,75 @@
 package com.example.android.leeson16;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    LinearLayout llMain;
+    RadioGroup rgGravity;
+    EditText etName;
+    Button btnCreate;
+    Button btnClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        ViewGroup.LayoutParams linLayoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        setContentView(linearLayout, linLayoutParams);
+        setContentView(R.layout.activity_main);
 
-        ViewGroup.LayoutParams lpView = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        llMain = (LinearLayout) findViewById(R.id.llMain);
+        rgGravity = (RadioGroup) findViewById(R.id.rgGravity);
+        etName = (EditText) findViewById(R.id.etName);
+        btnCreate = (Button) findViewById(R.id.btnCreate);
+        btnClear = (Button) findViewById(R.id.btnClear);
 
-        TextView tv = new TextView(this);
-        tv.setText("TextView");
-        tv.setLayoutParams(lpView);
-        linearLayout.addView(tv);
-
-        Button btn = new Button(this);
-        btn.setText("Button");
-        linearLayout.addView(btn, lpView);
-
-        LinearLayout.LayoutParams leftmarginParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        leftmarginParams.leftMargin = 50;
-
-        Button btn1 = new Button(this);
-        btn1.setText("Button1");
-        linearLayout.addView(btn1, leftmarginParams);
-
-        LinearLayout.LayoutParams rightGravityParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        rightGravityParams.gravity = Gravity.RIGHT;
-
-        Button btn2 = new Button(this);
-        btn2.setText("Button");
-        linearLayout.addView(btn2, rightGravityParams);
+        btnCreate.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnCreate:
+                LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                int btnGravity = Gravity.LEFT;
+
+                switch (rgGravity.getCheckedRadioButtonId()) {
+                    case R.id.rbLeft:
+                        btnGravity = Gravity.LEFT;
+                        break;
+                    case R.id.rbCenter:
+                        btnGravity = Gravity.CENTER_HORIZONTAL;
+                        break;
+                    case R.id.rbRight:
+                        btnGravity = Gravity.RIGHT;
+                        break;
+                }
+                lParams.gravity = btnGravity;
+                Button btnNew = new Button(this);
+                btnNew.setText(etName.getText().toString());
+                llMain.addView(btnNew, lParams);
+                break;
+
+            case R.id.btnClear:
+                llMain.removeAllViews();
+                Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 }
