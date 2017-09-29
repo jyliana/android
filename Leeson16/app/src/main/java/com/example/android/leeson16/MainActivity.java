@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnCreate.setOnClickListener(this);
         btnClear.setOnClickListener(this);
-
     }
 
     @Override
@@ -43,9 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
+        LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        Button btnNew;
         switch (view.getId()) {
             case R.id.btnCreate:
-                LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 int btnGravity = Gravity.LEFT;
 
                 switch (rgGravity.getCheckedRadioButtonId()) {
@@ -60,16 +61,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
                 lParams.gravity = btnGravity;
-                Button btnNew = new Button(this);
+                btnNew = new Button(this);
+             /*   btnNew.setId(count);
+                btnNew.setText("" + btnNew.getId());*/
                 btnNew.setText(etName.getText().toString());
                 llMain.addView(btnNew, lParams);
                 break;
 
             case R.id.btnClear:
+                int n = llMain.getChildCount();
                 llMain.removeAllViews();
-                Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Deleted " + n + " buttons", Toast.LENGTH_SHORT).show();
         }
-
     }
 }
