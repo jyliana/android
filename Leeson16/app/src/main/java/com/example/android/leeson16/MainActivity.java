@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText etName;
     Button btnCreate;
     Button btnClear;
+    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         Button btnNew;
+        TextView textView;
         switch (view.getId()) {
             case R.id.btnCreate:
                 int btnGravity = Gravity.LEFT;
@@ -62,10 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 lParams.gravity = btnGravity;
                 btnNew = new Button(this);
-             /*   btnNew.setId(count);
-                btnNew.setText("" + btnNew.getId());*/
+                textView = new TextView(this);
+                btnNew.setId(count++);
+                textView.setText(String.valueOf(btnNew.getId()));
                 btnNew.setText(etName.getText().toString());
                 llMain.addView(btnNew, lParams);
+                llMain.addView(textView, lParams);
                 break;
 
             case R.id.btnClear:
