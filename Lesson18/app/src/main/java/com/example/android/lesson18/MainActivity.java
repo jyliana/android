@@ -48,8 +48,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         lParams1.weight = leftValue;
         lParams2.weight = rightValue;
-        btn1.setText(String.valueOf(leftValue));
-        btn2.setText(String.valueOf(rightValue));
+        btn1.requestLayout();
+        btn2.requestLayout();
+    /*    btn1.setText(String.valueOf(leftValue));
+        btn2.setText(String.valueOf(rightValue));*/
     }
 
     @Override
