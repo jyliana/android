@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDiv.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View view) {
         float num1;
@@ -103,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
