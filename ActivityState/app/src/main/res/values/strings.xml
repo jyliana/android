@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ActivityState</string>
+    <string name="title_activity_activity_two">Title activity - Activity two</string>
 </resources>

@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.example.android.activitystate"
+        applicationId "com.example.android.a26intentfilter"
         minSdkVersion 23
         targetSdkVersion 26
         versionCode 1

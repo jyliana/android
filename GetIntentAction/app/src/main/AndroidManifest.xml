@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.activitystate">
+    package="com.example.android.getintentaction">
 
     <application
         android:allowBackup="true"
@@ -17,11 +17,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityTwo"
-            android:label="@string/title_activity_activity_two"
-            android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".ActivityThree"></activity>
-    </application>
+            android:name=".Info"
+            android:label="Date/Time info">
+            <intent-filter>
+                <action android:name="intent.action.time" />
+                <action android:name="intent.action.date" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

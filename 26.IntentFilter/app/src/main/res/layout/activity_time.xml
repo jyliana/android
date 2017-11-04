@@ -4,20 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.activitystate.ActivityTwo"
-    android:orientation="vertical">
+    tools:context="com.example.android.a26intentfilter.TimeActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/text_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity Two - text2"
-        />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to activity three"
-        />
+        android:text="Medium Text" />
 </LinearLayout>
